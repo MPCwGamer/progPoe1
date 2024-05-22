@@ -9,12 +9,23 @@ import javax.swing.JOptionPane;
  * @author RC_Student_lab
  */
 public class register { 
-   private String userName;
+    private String userName;
     private String password;
 
     public register() {
         this.userName = "";
         this.password = "";
+    }
+
+    public boolean create(String userName, String password) {
+        if (userName.contains("_") && userName.length() <= 5) {
+            this.userName = userName;
+            if (password.length() >= 8 && password.matches(".*[A-Z].*") && password.matches(".*\\d.*") && password.matches(".*[!@#$%^&*()_+{}\\[\\]|`~\\-=;',./<>?].*")) {
+                this.password = password;
+                return true;
+            }
+        }
+        return false;
     }
 
     public void create() {
