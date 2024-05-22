@@ -16,7 +16,7 @@ public class AppTest {
     private TaskManager taskManager;
     private Task task;
 
-    @Before
+  
     public void setUp() {
         register = new register();
         login = new Login();
